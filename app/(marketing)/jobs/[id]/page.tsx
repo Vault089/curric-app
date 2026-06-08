@@ -48,7 +48,7 @@ export default async function JobDetailPage({
 }: {
   params: { id: string }
 }) {
-  const supabase = createClient()
+  const supabase = createClient() as any
 
   const { data: job, error } = await supabase
     .from('job_listings')

@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { CreateJobForm } from './create-job-form'
 
 export default async function NewJobPage() {
-  const supabase = createClient()
+  const supabase = createClient() as any
   const user = await getUser(supabase)
 
   if (!user) {

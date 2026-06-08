@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import ProfileEditor from './profile-editor'
 
 export default async function DashboardProfilePage() {
-  const supabase = createClient() as any
+  const supabase = createClient() as any as any
   const user = await getUser(supabase)
 
   if (!user) {

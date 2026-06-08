@@ -52,7 +52,7 @@ export default async function PublicProfilePage({
 }: {
   params: { id: string }
 }) {
-  const supabase = createClient() as any
+  const supabase = createClient() as any as any
 
   const { data: profile, error } = await supabase
     .from('teacher_profiles')

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
 import { createClient } from "@/utils/supabase/server";

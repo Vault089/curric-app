@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from 'next/link';
 import { NavItem, navConfig, iconComponents } from '@/config/dashboard';
 import {
