@@ -1,10 +1,6 @@
 // @ts-nocheck
 import { createClient } from '@/utils/supabase/server';
-import {
-  getProducts,
-  getSubscription,
-  getUser
-} from '@/utils/supabase/queries';
+import { getUser, getProducts } from '@/utils/supabase/queries';
 import PricingRounded from './pricing-rounded';
 
 export default async function PricingPage() {
@@ -14,13 +10,11 @@ export default async function PricingPage() {
     getProducts(supabase),
   ]);
 
-  const subscription = user ? await getSubscription(supabase, user.id) : null;
-
   return (
     <PricingRounded
       user={user}
       products={products ?? []}
-      subscription={subscription}
+      subscription={null}
     />
   );
 }
