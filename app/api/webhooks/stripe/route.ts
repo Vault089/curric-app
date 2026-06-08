@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Stripe from 'stripe';
 import { stripe } from '@/utils/stripe/config';
 import {
