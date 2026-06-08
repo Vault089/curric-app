@@ -23,7 +23,7 @@ export default function Features() {
               <svg
                 viewBox="0 0 24 24"
                 className="h-12 w-12 fill-current"
-                fill-rule={feature.fillRule}
+                
               >
                 <path d={feature.svgPath} />
               </svg>
