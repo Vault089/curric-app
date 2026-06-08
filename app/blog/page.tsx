@@ -44,10 +44,10 @@ export default function Page(): React.ReactElement {
           }}
         >
           <h1 className="mb-4 border-b-4 border-foreground pb-2 text-4xl font-bold md:text-5xl">
-            Hikari Blog
+            Curric.app Blog
           </h1>
           <p className="text-sm md:text-base">
-            Design language and easability of use
+            Teaching tips, job market insights, and stories from ESL teachers across Asia
           </p>
         </div>
         <div className="mt-2 grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4 rounded-b-lg">

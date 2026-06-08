@@ -40,3 +40,7 @@ yarn-error.log*
 # certificates
 certificates
 .env*.local
+.env.local
+.env
+node_modules/
+.next/

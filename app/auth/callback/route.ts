@@ -22,6 +22,19 @@ export async function GET(request: NextRequest) {
         )
       );
     }
+
+    // After email confirmation, write role from user metadata to users table
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      const role = user.user_metadata?.role || 'teacher';
+      const full_name = user.user_metadata?.full_name || user.email?.split('@')[0] || '';
+
+      await supabase.from('users').upsert({
+        id: user.id,
+        full_name: full_name,
+        role: role
+      }).select();
+    }
   }
 
   // URL to redirect to after sign in process completes

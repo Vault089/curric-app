@@ -220,6 +220,7 @@ export interface Database {
           full_name: string | null
           id: string
           payment_method: Json | null
+          role: string | null
         }
         Insert: {
           avatar_url?: string | null
@@ -227,6 +228,7 @@ export interface Database {
           full_name?: string | null
           id: string
           payment_method?: Json | null
+          role?: string | null
         }
         Update: {
           avatar_url?: string | null
@@ -234,6 +236,7 @@ export interface Database {
           full_name?: string | null
           id?: string
           payment_method?: Json | null
+          role?: string | null
         }
         Relationships: [
           {
@@ -241,6 +244,302 @@ export interface Database {
             columns: ["id"]
             isOneToOne: true
             referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      teacher_profiles: {
+        Row: {
+          id: string
+          full_name: string
+          email: string
+          phone: string | null
+          nationality: string | null
+          current_country: string | null
+          city: string | null
+          bio: string | null
+          highest_education: string | null
+          degree_field: string | null
+          certifications: string[] | null
+          years_experience: number | null
+          languages: string[] | null
+          preferred_countries: string[] | null
+          preferred_job_types: string[] | null
+          min_salary_usd: number | null
+          avatar_url: string | null
+          cv_url: string | null
+          video_intro_url: string | null
+          is_public: boolean | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id: string
+          full_name: string
+          email: string
+          phone?: string | null
+          nationality?: string | null
+          current_country?: string | null
+          city?: string | null
+          bio?: string | null
+          highest_education?: string | null
+          degree_field?: string | null
+          certifications?: string[] | null
+          years_experience?: number | null
+          languages?: string[] | null
+          preferred_countries?: string[] | null
+          preferred_job_types?: string[] | null
+          min_salary_usd?: number | null
+          avatar_url?: string | null
+          cv_url?: string | null
+          video_intro_url?: string | null
+          is_public?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          full_name?: string
+          email?: string
+          phone?: string | null
+          nationality?: string | null
+          current_country?: string | null
+          city?: string | null
+          bio?: string | null
+          highest_education?: string | null
+          degree_field?: string | null
+          certifications?: string[] | null
+          years_experience?: number | null
+          languages?: string[] | null
+          preferred_countries?: string[] | null
+          preferred_job_types?: string[] | null
+          min_salary_usd?: number | null
+          avatar_url?: string | null
+          cv_url?: string | null
+          video_intro_url?: string | null
+          is_public?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      school_profiles: {
+        Row: {
+          id: string
+          org_name: string
+          org_type: string | null
+          country: string
+          city: string | null
+          website: string | null
+          description: string | null
+          logo_url: string | null
+          contact_email: string | null
+          contact_phone: string | null
+          is_verified: boolean | null
+          is_active: boolean | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id: string
+          org_name: string
+          org_type?: string | null
+          country: string
+          city?: string | null
+          website?: string | null
+          description?: string | null
+          logo_url?: string | null
+          contact_email?: string | null
+          contact_phone?: string | null
+          is_verified?: boolean | null
+          is_active?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          org_name?: string
+          org_type?: string | null
+          country?: string
+          city?: string | null
+          website?: string | null
+          description?: string | null
+          logo_url?: string | null
+          contact_email?: string | null
+          contact_phone?: string | null
+          is_verified?: boolean | null
+          is_active?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      job_listings: {
+        Row: {
+          id: string
+          school_id: string
+          title: string
+          description: string
+          country: string
+          city: string | null
+          job_type: string
+          subject: string | null
+          grade_level: string | null
+          salary_min: number | null
+          salary_max: number | null
+          salary_currency: string | null
+          min_experience: number | null
+          required_education: string | null
+          required_certifications: string[] | null
+          start_date: string | null
+          application_deadline: string | null
+          status: string | null
+          is_featured: boolean | null
+          views: number | null
+          applications_count: number | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          school_id: string
+          title: string
+          description: string
+          country: string
+          city?: string | null
+          job_type: string
+          subject?: string | null
+          grade_level?: string | null
+          salary_min?: number | null
+          salary_max?: number | null
+          salary_currency?: string | null
+          min_experience?: number | null
+          required_education?: string | null
+          required_certifications?: string[] | null
+          start_date?: string | null
+          application_deadline?: string | null
+          status?: string | null
+          is_featured?: boolean | null
+          views?: number | null
+          applications_count?: number | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          school_id?: string
+          title?: string
+          description?: string
+          country?: string
+          city?: string | null
+          job_type?: string
+          subject?: string | null
+          grade_level?: string | null
+          salary_min?: number | null
+          salary_max?: number | null
+          salary_currency?: string | null
+          min_experience?: number | null
+          required_education?: string | null
+          required_certifications?: string[] | null
+          start_date?: string | null
+          application_deadline?: string | null
+          status?: string | null
+          is_featured?: boolean | null
+          views?: number | null
+          applications_count?: number | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_listings_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "school_profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      applications: {
+        Row: {
+          id: string
+          job_id: string
+          teacher_id: string
+          status: string | null
+          cover_letter: string | null
+          notes: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          job_id: string
+          teacher_id: string
+          status?: string | null
+          cover_letter?: string | null
+          notes?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          job_id?: string
+          teacher_id?: string
+          status?: string | null
+          cover_letter?: string | null
+          notes?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "applications_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "job_listings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "applications_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      saved_jobs: {
+        Row: {
+          id: string
+          teacher_id: string
+          job_id: string
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          teacher_id: string
+          job_id: string
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          teacher_id?: string
+          job_id?: string
+          created_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_jobs_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "saved_jobs_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "job_listings"
             referencedColumns: ["id"]
           }
         ]

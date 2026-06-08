@@ -26,7 +26,7 @@ export function MobileNav({ items, children, user }: MobileNavProps) {
       <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md">
         <Link href="/" className="flex items-center space-x-2">
           <Icons.Eclipse />
-          <span className="font-bold">Hikari</span>
+          <span className="font-bold">Curric.app</span>
         </Link>
         <nav className="grid grid-flow-row auto-rows-max text-sm items-center flex text-center">
           {items.map((item, index) => (
@@ -45,7 +45,7 @@ export function MobileNav({ items, children, user }: MobileNavProps) {
         <div className="flex items-center space-x-2 mt-4">
           <ModeToggle />
           <Link
-            href={user ? '/dashboard' : '/login'}
+            href={user ? '/dashboard' : '/signin'}
             className={cn(
               buttonVariants({ variant: 'secondary', size: 'sm' }),
               'px-4'
@@ -53,6 +53,17 @@ export function MobileNav({ items, children, user }: MobileNavProps) {
           >
             {user ? 'Dashboard' : 'Login'}
           </Link>
+          {!user && (
+            <Link
+              href="/signup"
+              className={cn(
+                buttonVariants({ variant: 'default', size: 'sm' }),
+                'px-4'
+              )}
+            >
+              Sign Up
+            </Link>
+          )}
         </div>
         {children}
       </div>

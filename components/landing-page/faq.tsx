@@ -15,7 +15,7 @@ export default function FAQSection() {
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold">FAQ</h2>
         <p className="text-muted-foreground">
-          You got questions? I got answers.
+          Got questions about teaching English in Asia? We&apos;ve got answers.
         </p>
       </div>
       <div className="space-y-4">

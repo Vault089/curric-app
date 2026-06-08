@@ -4,8 +4,8 @@ import { testimonials } from '@/config/testimonials';
 
 export default function Testimonials() {
   const groupedTestimonials = [];
-  for (let i = 0; i < testimonials.length; i += 4) {
-    groupedTestimonials.push(testimonials.slice(i, i + 4));
+  for (let i = 0; i < testimonials.length; i += 3) {
+    groupedTestimonials.push(testimonials.slice(i, i + 3));
   }
 
   return (
@@ -13,9 +13,9 @@ export default function Testimonials() {
       <div className="flex items-center w-full max-w-7xl mb-8">
         <div className="flex-grow border-t border-gray-300"></div>
         <div className="flex-shrink px-2 text-center">
-          <h2 className="text-3xl font-bold">Testimonials</h2>
+          <h2 className="text-3xl font-bold">What Teachers Are Saying</h2>
           <p className="text-muted-foreground">
-            What everyone else is saying
+            Real stories from ESL teachers who found their dream jobs
           </p>
         </div>
         <div className="flex-grow border-t border-gray-300"></div>
@@ -30,7 +30,7 @@ export default function Testimonials() {
               <Card key={index} className="mb-4 h-full">
                 <CardHeader className="flex flex-row items-center bg-zinc-100 dark:bg-zinc-800 p-2 rounded-t-xl">
                   <div className="flex items-center">
-                    <Avatar className="size-7 mr-2"> {/* Adjusted size for smaller avatar */}
+                    <Avatar className="size-7 mr-2">
                       <AvatarImage src={testimonial.avatarImg} className="h-full w-full" />
                       <AvatarFallback className="h-full w-full">
                         {testimonial.avatarFallback}

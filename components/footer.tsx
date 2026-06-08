@@ -18,8 +18,8 @@ export default function Footer() {
             {footerLinks.getInTouch.title}
           </h2>
           <p className="text-xl text-gray-300 mb-4">
-            We partner with global brands, from startups to industry leaders.{' '}
-            <span className="text-white font-bold">Let's discuss.</span>
+            {footerLinks.getInTouch.description}{' '}
+            <span className="text-white font-bold">Let's connect.</span>
           </p>
           <h3 className="text-sm text-gray-300 font-bold mb-2">
             Subscribe to our Newsletter
@@ -102,13 +102,10 @@ export default function Footer() {
       <div className="mt-8 text-center text-gray-300 text-xs">
         <p>
           Copyright ©2024{' '}
-          <span className="text-white font-bold">Webestica</span>. All rights
+          <span className="text-white font-bold">Curric.app</span>. All rights
           reserved.
         </p>
       </div>
-      {/* <div className="absolute bottom-0 right-0 text-[10rem] text-bold text-gray-300 opacity-30">
-        ROSS
-      </div> */}
     </footer>
   );
 }

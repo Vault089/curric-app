@@ -1,13 +1,13 @@
 import { SiteConfig } from 'types';
 
 export const siteConfig: SiteConfig = {
-  name: 'Hikari',
+  name: 'Curric.app',
   description:
-    'A complete & open-source Next.js 14 Subscription Starter template using Supabase, Stripe, Tailwind CSS.',
-  url: 'https://hikari.antoineross.com',
-  ogImage: 'https://hikari.antoineross.com/og.jpg',
+    'Find your dream ESL teaching job in Asia. Connect with top international schools, language centers, and universities. Built for non-native English teachers.',
+  url: 'https://curric.app',
+  ogImage: 'https://curric.app/og.jpg',
   links: {
-    twitter: 'https://twitter.com/antoineross__',
-    github: 'https://github.com/antoineross/hikari'
+    twitter: 'https://twitter.com/curric_app',
+    github: 'https://github.com/curric-app'
   }
 };

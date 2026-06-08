@@ -35,7 +35,7 @@ export default function FooterPrimary() {
 
       toast({
         title: "Subscribed! 🎉",
-        description: "Thank you for subscribing! You will get an email when the app comes out.",
+        description: "Thank you for subscribing! You will get notified when new teaching jobs are posted.",
       })
       setEmail('')
     } catch (error) {
@@ -53,26 +53,61 @@ export default function FooterPrimary() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold mb-4">Work</h3>
+            <h3 className="text-lg font-bold mb-4">For Teachers</h3>
             <ul className="space-y-2">
               <li>
-                <AnimatedUnderline href="https://github.com/antoineross/hikari" className="text-primary">
-                  Hikari
+                <AnimatedUnderline href="/jobs" className="text-primary">
+                  Browse Jobs
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="https://supacrawler.com" className="text-primary">
-                  Supacrawler
+                <AnimatedUnderline href="/signup" className="text-primary">
+                  Create Profile
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="https://github.com/antoineross/Autogen-UI" className="text-primary">
-                  Autogen UI
+                <AnimatedUnderline href="/blog" className="text-primary">
+                  Teaching Tips
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="#" className="text-primary">
-                  See all →
+                <AnimatedUnderline href="/#features" className="text-primary">
+                  How It Works
+                </AnimatedUnderline>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-4">Countries</h3>
+            <ul className="space-y-2">
+              <li>
+                <AnimatedUnderline href="/jobs?country=south-korea" className="text-primary">
+                  South Korea
+                </AnimatedUnderline>
+              </li>
+              <li>
+                <AnimatedUnderline href="/jobs?country=japan" className="text-primary">
+                  Japan
+                </AnimatedUnderline>
+              </li>
+              <li>
+                <AnimatedUnderline href="/jobs?country=china" className="text-primary">
+                  China
+                </AnimatedUnderline>
+              </li>
+              <li>
+                <AnimatedUnderline href="/jobs?country=thailand" className="text-primary">
+                  Thailand
+                </AnimatedUnderline>
+              </li>
+              <li>
+                <AnimatedUnderline href="/jobs?country=taiwan" className="text-primary">
+                  Taiwan
+                </AnimatedUnderline>
+              </li>
+              <li>
+                <AnimatedUnderline href="/jobs?country=vietnam" className="text-primary">
+                  Vietnam
                 </AnimatedUnderline>
               </li>
             </ul>
@@ -81,13 +116,8 @@ export default function FooterPrimary() {
             <h3 className="text-lg font-bold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <AnimatedUnderline href="#" className="text-primary">
-                  About
-                </AnimatedUnderline>
-              </li>
-              <li>
-                <AnimatedUnderline href="/documentation" className="text-primary">
-                  Documentation
+                <AnimatedUnderline href="/about" className="text-primary">
+                  About Us
                 </AnimatedUnderline>
               </li>
               <li>
@@ -96,43 +126,31 @@ export default function FooterPrimary() {
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="mailto:hello@antoineross.com" className="text-primary">
-                  Contact us
-                </AnimatedUnderline>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4">Connect</h3>
-            <ul className="space-y-2">
-              <li>
-                <AnimatedUnderline href="https://x.com/antoineross__" className="text-primary">
-                  X
+                <AnimatedUnderline href="/contact" className="text-primary">
+                  Contact
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="https://linkedin.com/in/antoineross" className="text-primary">
-                  LinkedIn
+                <AnimatedUnderline href="/privacy" className="text-primary">
+                  Privacy Policy
                 </AnimatedUnderline>
               </li>
               <li>
-                <AnimatedUnderline href="https://github.com/antoineross/hikari" className="text-primary">
-                  GitHub
+                <AnimatedUnderline href="/terms" className="text-primary">
+                  Terms of Service
                 </AnimatedUnderline>
               </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">
-              Sign up for our newsletter
+              Stay Updated
             </h3>
             <p className="text-primary mb-4">
-              Hikari is a growing project. Subscribe to get the latest design news, articles, resources, updates and
-              inspiration.
+              Get the latest ESL teaching jobs, tips, and resources delivered to your inbox.
             </p>
             <form onSubmit={handleSubmit} className="flex">
               <div className="flex items-center w-full border border-gray-300 rounded-md focus-within:outline-none">
-
                 <Input 
                   type="email" 
                   placeholder="Enter your email" 
@@ -145,11 +163,6 @@ export default function FooterPrimary() {
                 <Button type="submit" className="my-1 bg-black text-white rounded-md mr-1 ">
                     <ArrowRightIcon className="h-5 w-5" />
                 </Button>
-                {/* <Button type="submit" className="w-full text-lg relative z-20 bg-gradient-to-b from-black to-gray-300/80 hover:from-gray-800 hover:to-gray-400/80 dark:from-white dark:to-slate-900/10 dark:hover:from-slate-200 dark:hover:to-slate-800/10">
-                  <span className="bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-white dark:from-white dark:to-slate-900/10">
-                    Subscribe
-                  </span>
-                </Button> */}
                 </CoolMode>
               </div>
           </form>
@@ -158,9 +171,9 @@ export default function FooterPrimary() {
         <div className="border-t mt-10 pt-6 flex flex-col items-center md:flex-row justify-between">
           <div className="flex items-center space-x-2">
             <LogInIcon className="h-6 w-6" />
-            <span className="text-xl font-bold">Hikari.</span>
+            <span className="text-xl font-bold">Curric.app</span>
           </div>
-          <p className="text-gray-500 mt-4 md:mt-0">© Hikari Inc. 2024</p>
+          <p className="text-gray-500 mt-4 md:mt-0">© Curric.app 2024. All rights reserved.</p>
         </div>
       </div>
     </footer>

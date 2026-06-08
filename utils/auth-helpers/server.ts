@@ -164,6 +164,8 @@ export async function signUp(formData: FormData) {
 
   const email = String(formData.get('email')).trim();
   const password = String(formData.get('password')).trim();
+  const name = String(formData.get('name') || '').trim();
+  const role = String(formData.get('role') || 'teacher').trim() as 'teacher' | 'school';
   let redirectPath: string;
 
   if (!isValidEmail(email)) {
@@ -179,7 +181,11 @@ export async function signUp(formData: FormData) {
     email,
     password,
     options: {
-      emailRedirectTo: callbackURL
+      emailRedirectTo: callbackURL,
+      data: {
+        full_name: name,
+        role: role
+      }
     }
   });
 
@@ -190,7 +196,18 @@ export async function signUp(formData: FormData) {
       error.message
     );
   } else if (data.session) {
-    redirectPath = getStatusRedirect('/', 'Success!', 'You are now signed in.');
+    // Write role to users table
+    if (data.user) {
+      await supabase.from('users').upsert({
+        id: data.user.id,
+        full_name: name,
+        role: role
+      }).select();
+    }
+    // Redirect based on role
+    redirectPath = role === 'school'
+      ? getStatusRedirect('/dashboard/jobs', 'Success!', 'You are now signed in.')
+      : getStatusRedirect('/dashboard/profile', 'Success!', 'You are now signed in.');
   } else if (
     data.user &&
     data.user.identities &&
@@ -202,6 +219,7 @@ export async function signUp(formData: FormData) {
       'There is already an account associated with this email address. Try resetting your password.'
     );
   } else if (data.user) {
+    // Email confirmation required — store role in metadata for later
     redirectPath = getStatusRedirect(
       '/',
       'Success!',

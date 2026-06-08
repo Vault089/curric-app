@@ -2,32 +2,32 @@ export const footerLinks = {
   getInTouch: {
     title: 'Get in touch',
     description:
-      "We partner with global brands, from startups to industry leaders. Let's discuss.",
+      "Have questions about teaching in Asia? We're here to help.",
     subscribeTitle: 'Subscribe to our newsletter'
   },
   pages: {
-    title: 'Pages',
+    title: 'For Teachers',
     links: [
-      { name: 'Home', href: '#' },
-      { name: 'Home 2', href: '#' },
-      { name: 'About', href: '#' },
-      { name: 'Work', href: '#' },
-      { name: 'Service Details', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Contact', href: '#' }
+      { name: 'Browse Jobs', href: '/jobs' },
+      { name: 'Create Profile', href: '/signup' },
+      { name: 'Teaching Tips', href: '/blog' },
+      { name: 'How It Works', href: '/#features' }
     ]
   },
   utilityPages: {
-    title: 'Utility pages',
+    title: 'Destinations',
     links: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Style Guide', href: '#' },
-      { name: 'Licenses', href: '#' }
+      { name: 'South Korea', href: '/jobs?country=south-korea' },
+      { name: 'Japan', href: '/jobs?country=japan' },
+      { name: 'China', href: '/jobs?country=china' },
+      { name: 'Thailand', href: '/jobs?country=thailand' },
+      { name: 'Taiwan', href: '/jobs?country=taiwan' },
+      { name: 'Vietnam', href: '/jobs?country=vietnam' }
     ]
   },
   location: {
-    title: 'Location',
-    address: 'Chicago HQ Estica Cop.\nMacomb, MI 48042',
-    socialLinksTitle: 'Social links:'
+    title: 'Company',
+    address: 'Curric.app\nHelping teachers find their dream jobs since 2024',
+    socialLinksTitle: 'Follow us:'
   }
 };

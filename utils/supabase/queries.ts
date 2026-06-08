@@ -2,14 +2,14 @@ import { SupabaseClient } from '@supabase/supabase-js';
 import { cache } from 'react';
 import { Database } from '@/types/db';
 
-export const getUser = cache(async (supabase: SupabaseClient<Database>) => {
+export const getUser = cache(async (supabase: SupabaseClient<Database, 'public', any>) => {
   const {
     data: { user }
   } = await supabase.auth.getUser();
   return user;
 });
 
-export const getSubscription = cache(async (supabase: SupabaseClient<Database>, userId: string) => {
+export const getSubscription = cache(async (supabase: SupabaseClient<Database, 'public', any>, userId: string) => {
   // Now fetch the subscription for this user
   const { data: subscription, error: subscriptionError } = await supabase
     .from('subscriptions')
@@ -58,7 +58,7 @@ export const getPlans = cache(async (supabase: SupabaseClient) => {
   return plans;
 });
 
-export const getUserDetails = cache(async (supabase: SupabaseClient) => {
+export const getUserDetails = cache(async (supabase: SupabaseClient<any>) => {
   const { data: userDetails } = await supabase
     .from('users')
     .select('*')

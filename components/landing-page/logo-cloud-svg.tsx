@@ -1,59 +1,41 @@
 'use client';
 import { useEffect, useState } from 'react';
-import {
-  StripeSvg,
-  NextjsSvg,
-  SupabaseSvg,
-  VercelSvg,
-  GithubSvg,
-  LogoSupacrawler
-} from '@/components/svg';
 
 export default function LogoCloud() {
   const [primaryColor, setPrimaryColor] = useState('');
 
   useEffect(() => {
-    // Get the computed style of the primary color
     const rootStyles = getComputedStyle(document.documentElement);
     const primaryColorValue = rootStyles.getPropertyValue('--primary');
     setPrimaryColor(primaryColorValue.trim());
   }, []);
 
+  const logos = [
+    { name: 'International Schools', icon: '🏫' },
+    { name: 'Language Centers', icon: '📚' },
+    { name: 'Universities', icon: '🎓' },
+    { name: 'Training Programs', icon: '📋' },
+    { name: 'Online Teaching', icon: '💻' },
+    { name: 'Government Programs', icon: '🏛️' },
+  ];
+
   return (
     <div>
       <p className="mt-12 text-xs uppercase text-primary text-center font-bold tracking-[0.3em]">
-        Built with these brands
+        Trusted by schools across Asia
       </p>
-      <div className="grid grid-cols-1 place-items-center justify-center my-12 space-y-4 sm:mt-8 sm:space-y-0 md:mx-auto md:max-w-2xl sm:grid sm:gap-10 sm:grid-cols-6">
-        <div className="flex items-center justify-center h-15 w-24">
-          <a href="https://nextjs.org" aria-label="Next.js Link">
-            <NextjsSvg className="size-full" style={{ color: primaryColor }} />
-          </a>
-        </div>
-        <div className="flex items-center justify-center h-15 w-24">
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
-            <VercelSvg className="size-full" style={{ color: primaryColor }} />
-          </a>
-        </div>
-        <div className="flex items-center justify-center h-12 w-24">
-          <a href="https://stripe.com" aria-label="stripe.com Link">
-            <StripeSvg className="size-full" style={{ color: primaryColor }} />
-          </a>
-        </div>
-        <LogoSupacrawler />
-        <div className="flex items-center justify-center h-15 w-24 sm:ml-8">
-          <a href="https://supabase.io" aria-label="supabase.io Link">
-            <SupabaseSvg
-              className="size-full"
-              style={{ color: primaryColor }}
-            />
-          </a>
-        </div>
-        <div className="flex items-center justify-center h-15 w-24">
-          <a href="https://github.com" aria-label="github.com Link">
-            <GithubSvg className="size-full" style={{ color: primaryColor }} />
-          </a>
-        </div>
+      <div className="grid grid-cols-2 place-items-center justify-center my-12 sm:mt-8 md:mx-auto md:max-w-3xl sm:grid sm:gap-8 sm:grid-cols-3 lg:grid-cols-6">
+        {logos.map((logo) => (
+          <div
+            key={logo.name}
+            className="flex flex-col items-center justify-center h-20 w-32 hover:scale-105 transition-transform"
+          >
+            <span className="text-3xl mb-1">{logo.icon}</span>
+            <span className="text-xs text-muted-foreground font-medium text-center">
+              {logo.name}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

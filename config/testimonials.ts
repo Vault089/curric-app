@@ -1,86 +1,44 @@
 export const testimonials = [
   {
-    name: 'dcodesdev',
-    title: 'TypeScript Developer',
-    avatarFallback: 'DC',
-    avatarImg: '/images/dcodes.png',
-    text: "That's beautiful bro!"
+    name: 'Maria Silva',
+    title: 'ESL Teacher in Seoul, South Korea',
+    avatarFallback: 'MS',
+    avatarImg: '',
+    text: "Curric.app made my job search so much easier. I found my current position at an international school in Seoul within two weeks. The salary transparency feature was a game-changer — I knew exactly what to expect before applying."
   },
   {
-    name: 'SuhailKakar',
-    title: 'Developer at joinOnboard',
-    avatarFallback: 'SK',
-    avatarImg: '/images/SuhailKakar.jpg',
-    text: "If you've built this a few months ago, it would have saved me hours :D"
+    name: 'Carlos Mendez',
+    title: 'English Instructor in Tokyo, Japan',
+    avatarFallback: 'CM',
+    avatarImg: '',
+    text: "As a non-native speaker, I always worried about finding schools that would value my qualifications. Curric.app connected me with institutions that specifically wanted teachers like me. I'm now teaching at a language center in Tokyo!"
   },
   {
-    name: 'SaidAitmbarek',
-    title: 'Founder of microlaunch.net',
-    avatarFallback: 'SA',
-    avatarImg: '/images/said.jpg',
-    text: "So cool, looks really clean. Any plan to open source it? ☺️ Wanna play with it!"
+    name: 'Priya Sharma',
+    title: 'ESL Teacher in Shanghai, China',
+    avatarFallback: 'PS',
+    avatarImg: '',
+    text: "The smart matching feature is incredible. It recommended schools that fit my profile perfectly — salary range, location, and teaching style. I applied to three positions and got offers from all of them."
   },
   {
-    name: 'magicuidesign',
-    title: 'UI Design Company',
-    avatarFallback: 'MU',
-    avatarImg: '/images/magicui.jpg',
-    text: "Clean 🤌"
+    name: 'Tomás Reyes',
+    title: 'University Lecturer in Bangkok, Thailand',
+    avatarFallback: 'TR',
+    avatarImg: '',
+    text: "I've tried other job boards but Curric.app is the only one designed for non-native English teachers. The direct application process saved me hours of repetitive form-filling. Highly recommend!"
   },
   {
-    name: 'YasmeenRoumie',
-    title: 'Developer',
-    avatarFallback: 'YR',
-    avatarImg: '/images/yasmeen.jpg',
-    text: "Ooh would love to try this out"
+    name: 'Ana Costa',
+    title: 'Kindergarten Teacher in Taipei, Taiwan',
+    avatarFallback: 'AC',
+    avatarImg: '',
+    text: "The teacher profile feature lets me showcase my TEFL certification and 5 years of experience beautifully. Schools actually reach out to me now — I don't have to chase them."
   },
   {
-    name: 'shadcn',
-    title: 'Developer',
-    avatarFallback: 'SC',
-    avatarImg: '/images/shadcn.jpg',
-    text: "👀"
-  },
-  {
-    name: 'bzagrodzki',
-    title: 'Developer',
-    avatarFallback: 'BZ',
-    avatarImg: '/images/bzrag.jpg',
-    text: "Nice one! But I would prefer some more \"sans\" font 😉"
-  },
-  {
-    name: 'MPlegas',
-    title: 'Developer',
-    avatarFallback: 'MP',
-    avatarImg: '/images/MPlegas.jpg',
-    text: "Exceptional!"
-  },
-  {
-    name: 'kvncyf_',
-    title: 'Developer',
-    avatarFallback: 'KC',
-    avatarImg: '/images/kvn.jpg',
-    text: "Nice move."
-  },
-  {
-    name: '0xRaduan',
-    title: 'Developer',
-    avatarFallback: 'RA',
-    avatarImg: '/images/0xraduan.jpg',
-    text: "This looks fire"
-  },
-  {
-    name: 'Luax0',
-    title: 'Developer',
-    avatarFallback: 'LX',
-    avatarImg: '/images/luax0.jpg',
-    text: "Can't wait to see more 👀"
-  },
-  {
-    name: 'ausrobdev',
-    title: 'Developer',
-    avatarFallback: 'RA',
-    avatarImg: '/images/robdev.jpg',
-    text: "Let me know when its ready, I'll add it to buildatlightspeed.com - we need more high quality open source boilerplates"
+    name: 'Luis Fernández',
+    title: 'Online ESL Tutor & In-Person Teacher in Vietnam',
+    avatarFallback: 'LF',
+    avatarImg: '',
+    text: "What I love most is the transparency. Every listing shows salary, benefits, and visa sponsorship info. No more surprises after signing a contract. Curric.app is how job searching should be."
   }
 ];
