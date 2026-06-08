@@ -28,7 +28,7 @@ export function SaveJobButton({
     }
 
     if ('saved' in result) {
-      setSaved(result.saved)
+      setSaved(result.saved ?? false)
     }
   }
 
