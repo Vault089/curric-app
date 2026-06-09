@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Metadata } from 'next';
 import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
