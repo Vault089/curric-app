@@ -1,10 +1,12 @@
 import {
-  LayoutDashboard,
-  Briefcase,
-  User,
-  Bookmark,
-  FileText,
-  Settings
+  LineChart,
+  Package,
+  Package2,
+  Settings,
+  ShoppingCart,
+  Users2,
+  Inbox,
+  FileText
 } from 'lucide-react';
 
 export interface NavItem {
@@ -15,19 +17,27 @@ export interface NavItem {
 }
 
 export const iconComponents = {
-  LayoutDashboard,
-  Briefcase,
-  User,
-  Bookmark,
+  Inbox,
+  ShoppingCart,
   FileText,
-  Settings
+  Package,
+  Users2,
+  LineChart
 };
 
 export const navConfig = [
-  { href: '/dashboard', icon: 'LayoutDashboard', label: 'Dashboard' },
-  { href: '/dashboard/jobs', icon: 'Briefcase', label: 'Browse Jobs' },
-  { href: '/dashboard/profile', icon: 'User', label: 'My Profile' },
-  { href: '/dashboard/saved', icon: 'Bookmark', label: 'Saved Jobs' },
-  { href: '/dashboard/applications', icon: 'FileText', label: 'Applications' },
-  { href: '/dashboard/settings', icon: 'Settings', label: 'Settings' }
+  { href: '/dashboard', icon: 'Inbox', label: 'Dashboard' },
+  // { href: '/dashboard/posts', icon: 'FileText', label: 'Posts' },
+  {
+    href: '/dashboard/customer',
+    icon: 'Users2',
+    label: 'Customers',
+    disabled: true
+  },
+  {
+    href: '/dashboard/analytics',
+    icon: 'LineChart',
+    label: 'Analytics',
+    disabled: true
+  }
 ];
