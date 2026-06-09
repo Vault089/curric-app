@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 
 import { UserAccountNav } from '@/components/user-account-nav';
 import Link from 'next/link';
-import { Package2, Search, Settings, Menu } from 'lucide-react';
+import { Search, Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 import { NavItem, iconComponents } from '@/config/dashboard';
@@ -40,12 +40,12 @@ export function Navbar({
         <SheetContent side="left" className="sm:max-w-xs">
           <nav className="grid gap-6 text-lg font-medium">
             <Link
-              href="#"
+              href="/dashboard"
               className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
               prefetch={false}
             >
-              <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-              <span className="sr-only">Acme Inc</span>
+              <span className="text-sm font-bold">C</span>
+              <span className="sr-only">Curric.app</span>
             </Link>
             {navConfig.map(
               (
@@ -70,14 +70,7 @@ export function Navbar({
                 );
               }
             )}
-            <Link
-              href="#"
-              className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-              prefetch={false}
-            >
-              <Settings className="h-5 w-5" />
-              Settings
-            </Link>
+
           </nav>
         </SheetContent>
       </Sheet>
