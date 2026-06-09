@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import {
   Tooltip,
   TooltipContent,
@@ -7,6 +8,15 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip';
 import Link from 'next/link';
+import {
+  LineChart,
+  Package,
+  Package2,
+  Eclipse,
+  ShoppingCart,
+  Users2,
+  Inbox
+} from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { NavItem, iconComponents } from '@/config/dashboard';
 
@@ -17,19 +27,17 @@ const Sidebar = ({ navConfig }: { navConfig: NavItem[] }) => {
     <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
       <TooltipProvider>
         <Link
-          href="/dashboard"
+          href="/"
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           prefetch={false}
         >
-          <span className="text-xs font-bold">C</span>
+          <Eclipse className="h-5 w-5 transition-all group-hover:scale-110" />
           <span className="sr-only">Curric.app</span>
         </Link>
         {navConfig.map((item, index) => {
           const IconComponent =
             iconComponents[item.icon as keyof typeof iconComponents];
-          const isActive = item.href === '/dashboard'
-            ? pathname === '/dashboard'
-            : pathname.startsWith(item.href);
+          const isActive = pathname === item.href;
           const isDisabled = item.disabled;
           return (
             <Tooltip key={index}>
@@ -58,7 +66,7 @@ const Sidebar = ({ navConfig }: { navConfig: NavItem[] }) => {
                 </div>
               </TooltipTrigger>
               <TooltipContent side="right">
-                {isDisabled ? `${item.label} (Coming Soon)` : item.label}
+                {isDisabled ? `${item.label} (Disabled)` : item.label}
               </TooltipContent>
             </Tooltip>
           );
